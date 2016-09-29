@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void load_data_from_server(final int id) {
+    private void load_data_from_server(int id) {
 
             AsyncTask<Integer,Void,Void> task = new AsyncTask<Integer, Void, Void>() {
                 @Override
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder()
-                            .url("http://192.168.178.26/test/script.php?id="+id)
+                            .url("http://192.168.178.26/test/script.php?id="+integers[0])
                             .build();
                     try {
                         Response response = client.newCall(request).execute();
